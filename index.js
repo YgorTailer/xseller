@@ -25,6 +25,16 @@ client.on('ready', () => {
 client.on('messageCreate', async (message) => {
     if (message.author.bot) return;
     
+    // Comando de ajuda
+    if (message.content === '!ajuda') {
+        const ajuda = `🤖 **Comandos Disponíveis:**\n\n` +
+                     `\`!vender <produto> <valor>\` - Cadastra um novo produto para venda\n` +
+                     `\`!vendas\` - Lista todos os produtos à venda\n` +
+                     `\`!ajuda\` - Mostra esta mensagem de ajuda`;
+        
+        message.reply(ajuda);
+    }
+
     // Comando de vender
     if (message.content.startsWith('!vender')) {
         const args = message.content.split(' ');
