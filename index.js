@@ -27,7 +27,7 @@ client.on('messageCreate', async (message) => {
     
     // Comando de ajuda
     if (message.content === '!ajuda') {
-        const ajuda = `🤖 **Comandos Disponíveis:**\n\n` +
+        const ajuda = `🤖 **Comandos:**\n\n` +
                      `\`!vender <produto> <valor>\` - Cadastra um novo produto para venda\n` +
                      `\`!vendas\` - Lista todos os produtos à venda\n` +
                      `\`!ajuda\` - Mostra esta mensagem de ajuda`;
