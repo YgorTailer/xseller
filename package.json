@@ -1,0 +1,13 @@
+{
+  "name": "xseller",
+  "version": "1.0.0",
+  "description": "Bot de vendas simples",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.11.0",
+    "dotenv": "^16.0.3"
+  }
+} 
