@@ -1,13 +1,18 @@
 {
-  "name": "xseller",
-  "version": "1.0.0",
-  "description": "Bot de vendas simples",
+  "name": "xseller-bot",
+  "version": "1.0.1",
+  "description": "Bot de vendas automatizadas para Discord",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "dependencies": {
-    "discord.js": "^14.11.0",
-    "dotenv": "^16.0.3"
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.4.5",
+    "axios": "^1.6.7",
+    "mercadopago": "^2.0.8",
+    "mongoose": "^8.2.1"
   }
 } 

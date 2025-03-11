@@ -1,8 +1,10 @@
-const { Client, GatewayIntentBits, Collection } = require('discord.js');
-const dotenv = require('dotenv');
+import { Client, GatewayIntentBits, Collection } from 'discord.js';
+import { config } from 'dotenv';
 
-dotenv.config();
+// Configuração inicial
+config();
 
+// Criar cliente
 const client = new Client({
     intents: [
         GatewayIntentBits.Guilds,
@@ -12,8 +14,6 @@ const client = new Client({
     ]
 });
 
-client.commands = new Collection();
-
 // Sistema básico de vendas
 const vendas = new Map();
 
@@ -22,15 +22,16 @@ client.on('ready', () => {
     console.log('Sistema de vendas iniciado com sucesso!');
 });
 
-// Comando simples de venda
+// Comandos de venda
 client.on('messageCreate', async (message) => {
     if (message.author.bot) return;
     
+    // Comando de vender
     if (message.content.startsWith('!vender')) {
         const args = message.content.split(' ');
         const produto = args[1];
         const valor = parseFloat(args[2]);
-
+        
         if (!produto || !valor) {
             return message.reply('Use: !vender <produto> <valor>');
         }
@@ -43,10 +44,10 @@ client.on('messageCreate', async (message) => {
         };
 
         vendas.set(Date.now(), venda);
-
         message.reply(`✅ Produto "${produto}" cadastrado para venda por R$ ${valor}`);
     }
 
+    // Comando de listar vendas
     if (message.content === '!vendas') {
         let listaVendas = '📊 **Lista de Vendas:**\n\n';
         
@@ -61,4 +62,5 @@ client.on('messageCreate', async (message) => {
     }
 });
 
+// Login
 client.login(process.env.BOT_TOKEN); 

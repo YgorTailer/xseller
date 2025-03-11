@@ -1,4 +1,14 @@
 {
     "version": "1.0.1",
-    "lastUpdate": "2024-03-11"
+    "lastUpdate": "2024-03-11",
+    "features": {
+        "vendas": true,
+        "pagamentos": true,
+        "tickets": true,
+        "logs": true
+    },
+    "requirements": {
+        "node": ">=16.x",
+        "discord.js": "^14.x"
+    }
 } 

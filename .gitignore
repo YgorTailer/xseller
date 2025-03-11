@@ -1,2 +1,21 @@
+# Dependencies
 node_modules/
-.env 
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Logs
+logs/
+*.log
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Temp files
+temp/
+tmp/ 
