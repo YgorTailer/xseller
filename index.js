@@ -1,7 +1,6 @@
 import { Client, GatewayIntentBits, Collection } from 'discord.js';
 import { config } from 'dotenv';
 
-// Configuração inicial
 config();
 
 // Criar cliente
